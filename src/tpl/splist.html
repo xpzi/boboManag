@@ -1,0 +1,50 @@
+<p class="text-info">
+	欢迎回来  商品管理<br/>
+</p>
+
+<p>
+	<br/></br?>搜索:
+	<div class="row">
+		<div class="col-md-12">
+			<div class="input-group">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+		      </span>
+		      <input type="text" ng-model="keyword" class="form-control">
+		    </div>
+		</div>
+	</div>
+</p>
+
+<table class="table table-bordered">
+	<tr class="row well">
+		<td class="col-md-1">图片</td>
+		<td class="col-md-8">介绍</td>
+		<td class="col-md-1">价格</td>
+		<td class="col-md-2">操作</td>
+	</tr>
+	<tr class="row" ng-repeat="item in splist | filter:serach:item | orderBy: '-id'" >
+		<td class="col-md-1"><img src="{{item.imgpath}}" height="60" width="60" alt="" /></td>
+		<td class="col-md-8"> <a href="#">{{item.name}}</a> <br /> {{item.introduce}}</td>
+		<td class="col-md-1">￥{{item.pirse}}</td>
+		<td class="col-md-2">  <a href="#addsp/{{item.id}}">修改</a> <a  ng-click="delSp(item.id, $index)" >删除</a> </td>	
+	</tr>
+</table>
+
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">真的要删除：</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{sptitle}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" ng-click="delSpOk()">删除</button>
+      </div>
+    </div>
+  </div>
+</div>

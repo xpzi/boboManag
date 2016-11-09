@@ -1,0 +1,95 @@
+<div>
+
+<style type="text/css">
+	
+.adduser{
+
+}
+.adduser input {
+	border:0;width: 100%;
+
+
+}
+.adduser tr td:nth-child(2n+1) {
+	position: relative;
+	background: #fbf8f8;
+	padding-left: 15px;	
+}
+
+ .bitian{
+	position: absolute;
+	left: 5px;
+	color: #faa;
+}
+.color1{
+	color:#faa;
+	padding:0  20px 5px 0;
+}
+
+.adduser tr td:nth-child(2n) {
+	padding: 0;	
+}
+.adduser tr td:nth-child(2n) input {
+	height: 100%;
+	width: 100%;
+	outline-color: #9bc5e8;
+	padding: 0 10px;
+}
+</style>
+
+
+
+<p class="text">
+	hello  my name is add user!<br />
+	带 * 为必填项
+</p>
+<div class="text-right">
+	<span class="color1">{{tishi}}</span>	
+</div>
+
+	<table class="adduser table table-bordered"   >
+ 	
+ 		<tr>
+ 			<td><i  class="bitian">*</i>姓名：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.name"></td>
+ 			<td><iclass="bitian">*</i>性别：</td>
+ 			<td><input ng-focus="huodefocus()"  type="text"  ng-focus="huodefocus()" ng-model="user.xingbie"></td>
+ 			<td>年龄：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.age"></td>
+ 		</tr>
+ 		<tr>
+ 			<td><i class="bitian">*</i>出生年月：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.both"></td>
+ 			<td>籍贯</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.jiguan"></td>
+ 			<td>名族：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.mingzu"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>毕业学校：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.school"></td>
+ 			<td>最高学历：</td>
+ 			<td><input ng-focus="huodefocus()" type="text" ng-model="user.xueli"></td>
+ 			<td>政治面貌：</td>
+ 			<td><input ng-focus="huodefocus()"  type="text" ng-model="user.zhengzhi"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>专业：</td>
+ 			<td><input type="text" ng-focus="huodefocus()" ng-model="user.zhuanye"></td>
+ 			<td>QQ：</td>
+ 			<td><input type="text" ng-focus="huodefocus()" ng-model="user.qq"></td>
+ 			<td><i class="bitian">*</i>邮箱：</td>
+ 			<td><input type="text" ng-focus="huodefocus()" ng-model="user.emil"></td>
+ 		</tr>
+ 		<tr>
+ 			<td><i class="bitian">*</i>电话：</td>
+ 			<td><input type="text" ng-focus="huodefocus()"  ng-model="user.phone"></td>
+ 			<td>其它：</td>
+ 			<td colspan="3"><input type="text" ng-model="user.other"></td>
+ 		</tr>
+	</table>
+	<div class="row">
+		<div class="col-md-9 "></div>
+		<div class="col-md-3 "> <button ng-click="addUser( user.id )" class="btn btn-info" style="width: 40%;">添加</button> </div>
+	</div>
+</div>

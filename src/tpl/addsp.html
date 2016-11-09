@@ -1,0 +1,40 @@
+<div id="addsp">
+<div class="row">
+	 <div class="form-group  has-success has-feedback">
+	    <label class="control-label col-md-2 text-right" >商品名称</label>
+	    <div class="col-md-7">
+			<input type="text" placeholder="商品名称" ng-model="item.name" class="form-control">
+		</div>	
+	</div>
+</div>
+<div class="row">
+	 <div class="form-group has-feedback">
+	    <label class="control-label col-md-2 text-right" >商品价格</label>
+	    <div class="col-md-7">
+			<input type="text" placeholder="商品价格" ng-model="item.pirse" class="form-control">
+		</div>	
+	</div>
+</div>
+<div class="row">
+	 <div class="form-group has-feedback">
+	 	
+	    <label class="control-label col-md-2 text-right" >图片地址</label>
+	    <div class="col-md-7">
+			<input type="text" class="form-control" ng-model="item.imgpath">
+		</div>	
+	</div>
+</div>
+<div class="row">
+	 <div class="form-group has-feedback">
+	    <label class="control-label col-md-2 text-right"   >商品介绍</label>
+	    <div class="col-md-7">
+			<textarea style="min-height: 100px;" class="form-control" ng-model="item.introduce"></textarea>
+		</div>	
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-2 col-md-offset-2" >
+		<a ng-click="savesp()"  class="btn btn-default">{{caozuo}}</a>
+	</div>
+</div>
+</div>

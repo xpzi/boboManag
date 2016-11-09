@@ -1,0 +1,40 @@
+<div class="container-fluid" ng-controller="mainController">
+	<!-- header -->
+	<div class="row-fluid">
+		<h1 class="">
+			<a href="#home"><img src="src/img/05126761563505684.png" alt="" /></a>
+			<a class="btn btn-primary"><i class="glyphicon  glyphicon-pencil"></i></a>
+			<a class="btn btn-success"><i class="glyphicon  glyphicon-home"></i></a>
+			<a class="btn btn-info"><i class="glyphicon  glyphicon-th"></i></a>
+			<div class="pull-right">
+				<div class=" dropdown">
+					<button class="btn btn-info dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+						<img src="src/img/05126761563505684.png" height="20px" width="20px" alt="" />
+						欢迎，管理员
+						<span class="caret"> </span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li> <a href="#" >退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</h1>
+	</div>
+</div>
+<div class="container-fluid main">
+	
+	<!-- conlist -->
+	<div class="row ">
+		<div class="col-md-2 well " style="height: 100%;">
+			<ul class="nav nav-pills nav-stacked">
+				<li ng-repeat="item in navlist" ng-click="leftnavlist($index)"  class=" bg-info  {{curPosition == $index ? 'active' : ''}}">
+					<a href="{{item.href}}">{{item.title}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-10 well con">
+			<ui-view></ui-view>
+		</div>
+	</div>
+</div>
+

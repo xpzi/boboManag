@@ -1,0 +1,79 @@
+<div>
+
+<style type="text/css">
+.user .userlist:nth-child(2n){
+	background: #fff6f6;
+}
+.user .userlisthead{
+	background: #f0f0f0;
+}
+</style>
+
+
+<p>
+	<br/></br?>搜索:
+	<div class="row">
+		<div class="col-md-12">
+			<div class="input-group">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+		      </span>
+		      <input type="text" ng-model="keyword" class="form-control">
+		    </div>
+		</div>
+	</div>
+</p>
+
+	<table class="user table table-bordered"   >
+		<tr class="userlisthead">
+			<th>id</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年龄</th>
+			<th>籍贯</th>
+			<th>名族</th>
+			<th>毕业学校</th>
+			<th>政治面貌</th>
+			<th>专业</th>
+			<th>QQ</th>
+			<th>邮箱</th>
+			<th>电话</th>
+			<th>操作</th>
+		</tr>
+		<tr class="userlist" ng-repeat=" user in users | filter:keyword">
+			<td>{{user.id}}</td>
+			<td>{{user.name}}</td>
+			<td>{{user.xingbie}}</td>
+			<td>{{user.age}}</td>
+			<td>{{user.jiguan}}</td>
+			<td>{{user.mingzu}}</td>
+			<td>{{user.school}}</td>
+			<td>{{user.zhengzhi}}</td>
+			<td>{{user.zhuanye}}</td>
+			<td>{{user.qq}}</td>
+			<td>{{user.emil}}</td>
+			<td>{{user.phone}}</td>
+			<th> <a href="#adduser/{{user.id}}">修改</a> <a   ng-click="querendel(user.id, $index)">删除</a> </th>
+		</tr>
+	</table>
+</div>
+
+
+
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">真的要删除：</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{sptitle}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" ng-click="delSpOk()">删除</button>
+      </div>
+    </div>
+  </div>
+</div>
